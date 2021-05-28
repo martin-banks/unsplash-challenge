@@ -1,0 +1,42 @@
+
+.gridContainer {
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 10rem;
+  max-width: 1800px;
+}
+.imageContainer {
+  position: relative;
+  /* padding: 1rem; */
+}
+.highres {
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: all 200ms;
+  padding: 2rem;
+  background: linear-gradient(rgba(0,0,0, 0.4), rgba(0,0,0, 0));
+  pointer-events: none;
+}
+
+.overlay p {
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  text-shadow: 0 1px 4px rgba(0,0,0, 0.6)
+}
+
+.imageContainer:hover .overlay {
+  opacity: 1
+}
+
