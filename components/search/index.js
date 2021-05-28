@@ -1,10 +1,11 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 
 import styles from './styles.module.css'
 
 export default function Search (props) {
-  const [ perPage, setPerPage ] = useState(props.per_page || 10)
-  const [ search, setSearch ] = useState(props.search || '')
+  const { searchDetails } = props
+  const [ perPage, setPerPage ] = useState(searchDetails?.per_page || 20)
+  const [ search, setSearch ] = useState(searchDetails?.search || '')
 
   const refForm = useRef(null)
 
@@ -19,8 +20,19 @@ export default function Search (props) {
     refForm.current.submit()
   }
 
+  useEffect(() => {
+    if (searchDetails) {
+      setPerPage(searchDetails?.per_page)
+      setSearch(searchDetails?.search)
+    }
+  }, [searchDetails])
+
   return <>
-    <form className={ styles.searchForm } ref={ refForm } onSubmit={ handleSubmit }>
+    <form
+      className={ styles.searchForm }
+      ref={ refForm }
+      onSubmit={ handleSubmit }
+    >
 
       <label
         className={ styles.searchLabel }
@@ -29,13 +41,12 @@ export default function Search (props) {
       >Search for images</label>
 
       <input
-        className={ styles.searchLabel }
         className={ styles.searchInput__text }
         onChange={ handleSearchInput }
         name="search"
         type="text"
         value={ search }
-        autofocus
+        autoFocus
       />
 
       <div className={ styles.perPageContainer }>
@@ -49,11 +60,13 @@ export default function Search (props) {
           max="50"
           value={ perPage }
         />
-
       </div>
 
-
-      <input className={ styles.searchSubmit } type="submit" value="go" />
+      <input
+        className={ styles.searchSubmit }
+        type="submit"
+        value="GO!"
+      />
     </form>
   </>
 }

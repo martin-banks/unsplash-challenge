@@ -4,39 +4,101 @@
   margin: 0 auto;
   margin-bottom: 10rem;
   max-width: 1800px;
+  padding: 1rem;
 }
 .imageContainer {
+  display: block;
   position: relative;
-  /* padding: 1rem; */
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 0;
+  transition: all 200ms ease-in-out;
+  border-radius: 8px;
+  overflow: hidden;
 }
+.imageContainer:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: inherit;
+  background-position: center center;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.50)) blur(10px);
+  z-index: 0;
+  transform: translate(0, 4%) scale(1);
+  opacity: 1;
+}
+
+.imageContainer:hover {
+  transform: scale(1.1);
+  z-index: 100;
+}
+
 .highres {
   display: block;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
+  opacity: 1;
+  z-index: 10;
 }
 
 .overlay {
   position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
   top: 0;
   left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   opacity: 0;
-  transition: all 200ms;
+  transform: translateY(100%);
+  transition: all 300ms;
   padding: 2rem;
-  background: linear-gradient(rgba(0,0,0, 0.4), rgba(0,0,0, 0));
+  /* background: linear-gradient(rgba(0,0,0, 0.6), rgba(0,0,0, 0)); */
   pointer-events: none;
+  z-index: 100;
 }
 
 .overlay p {
-  font-weight: bold;
+  display: block;
   color: white;
   margin: 0;
-  text-shadow: 0 1px 4px rgba(0,0,0, 0.6)
+  text-shadow: 0 1px 4px rgba(0,0,0, 0.6);
+}
+
+.caption {
+  text-transform: capitalize;
+}
+
+.profileImage {
+  width: 32px;
+  height: 32px;
+  border-radius: 100px;
+  border: solid 1px #fff;
+  vertical-align: middle;
+  margin-right: 0.5rem;
 }
 
 .imageContainer:hover .overlay {
-  opacity: 1
+  opacity: 1;
+  transform: translateY(0)
+}
+
+.noResults {
+  display: block;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .noResults {
+    color: white
+  }
 }
 

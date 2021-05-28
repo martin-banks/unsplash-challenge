@@ -1,34 +1,36 @@
-import { useState, useRef } from 'react'
-
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
-// import Image from 'next/image'
-
-import styles from '../styles/Home.module.css'
 
 import Search from '../components/search'
 import ImageGrid from '../components/image-grid'
 
+import styles from '../styles/Home.module.css'
+
+
 export default function Home (props) {
-  
+  const [ serverProps , setServerProps ] = useState(null)
+
+  useEffect(() => {
+    setServerProps(props)
+  }, [props])
+
   return (
     <div className={styles.container}>
       <Head>
         <title>Unsplash Challenge</title>
-        <meta name="description" content="Create a simple app to find images on Unsplash" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          content="Create a simple app to find images on Unsplash" 
+        />
+        <link
+          rel="icon"
+          href="/favicon.ico" 
+        />
       </Head>
 
       <main className={styles.main}>
-
-        {/* search */}
-        <Search props={ props } />
-
-
-        {/* image gallery */}
-        {
-          props.searchResults && <ImageGrid searchResults={ props.searchResults } />
-        }
-        
+        <Search searchDetails={ serverProps } />
+        { props.searchResults && <ImageGrid searchResults={ props.searchResults } /> }
       </main>
 
       <footer className={styles.footer}>
@@ -63,10 +65,10 @@ export async function getServerSideProps (context) {
 
   return {
     props: {
-      search: context?.query?.search || null,
       searchResults,
-      page: context?.query?.page || null,
-      per_page: context?.query?.per_page || 10,
+      search: context?.query?.search || '',
+      page: context?.query?.page || 1,
+      per_page: context?.query?.per_page || 20,
     }
   }
 

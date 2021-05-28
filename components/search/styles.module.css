@@ -1,32 +1,37 @@
 .searchForm {
-  margin: 30vh auto 10vh auto;
+  margin: 8vh auto 8vh auto;
   display: block;
-  max-width: 1000px;
+  max-width: 800px;
+  padding: 0 1rem;
 }
 
 .searchInput__text {
   display: block;
   width: 100%;
-  font-size: 2rem;
+  font-size: 2.5rem;
   padding: 1rem;
-  border: none;
-  border-bottom: solid 1px lightgrey;
-  margin-bottom: 3rem;
-  background: white;
-  box-shadow: 0 4px 16px -8px rgba(0,0,0, 0.6);
+  border: solid 2px rgb(90, 231, 250, 0.6);
+  margin-bottom: 1.5rem;
   border-radius: 4px;
   text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  background: -webkit-linear-gradient(cyan, midnightblue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  caret-color: dodgerblue;
 }
+
 .searchInput__number {
   font-size: 2rem;
   padding: 1rem;
   border: none;
-  border-bottom: solid 1px lightgrey;
   margin-bottom: 1rem;
-  box-shadow: 0 4px 16px -8px rgba(0,0,0, 0.6);
   border-radius: 4px;
   min-width: 200px;
   text-align: center;
+  background: none;
+  border: solid 2px rgb(90, 231, 250, 0.6);
 }
 
 .searchLabel {
@@ -34,21 +39,22 @@
   display: block;
   margin-bottom: 1rem;
   text-align: center;
-
 }
 
 .searchSubmit {
   display: block;
-  margin: 2rem auto;
+  margin: 1rem auto;
   width: 100px;
   height: 100px;
   border-radius: 100px;
-  border: solid 2px lightblue;
-  background: white;
+  border: solid 4px lightblue;
+  background: none;
   text-transform: uppercase;
   transition: all 200ms;
   font-size: 1.5rem;
+  box-shadow: 0 0px 32px -8px rgb(90, 231, 250);
 }
+
 .searchSubmit:hover {
   background: deepskyblue;
   color: white
@@ -57,4 +63,28 @@
 .perPageContainer {
   margin: 0 auto;
   text-align: center
+}
+
+@media screen and (min-width: 600px) {
+  .searchForm {
+    margin: 20vh auto 20vh auto;
+  }
+  .searchInput__text {
+    margin-bottom: 3rem;
+  }
+  .searchSubmit {
+    margin: 2rem auto;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .searchInput__number {
+    color: #ccc;
+  }
+  .searchLabel {
+    color: #ccc
+  }
+  .searchSubmit {
+    color: white
+  }
 }
