@@ -1,5 +1,5 @@
 .searchForm {
-  margin: 30vh auto 10vh auto;
+  margin: 8vh auto 8vh auto;
   display: block;
   max-width: 1000px;
 }
@@ -34,7 +34,6 @@
   display: block;
   margin-bottom: 1rem;
   text-align: center;
-
 }
 
 .searchSubmit {
@@ -57,4 +56,16 @@
 .perPageContainer {
   margin: 0 auto;
   text-align: center
+}
+
+@media screen and (min-width: 600px) {
+  .searchForm {
+    margin: 20vh auto 20vh auto;
+  }
+  .searchInput__text {
+    margin-bottom: 3rem;
+  }
+  .searchSubmit {
+    margin: 2rem auto;
+  }
 }

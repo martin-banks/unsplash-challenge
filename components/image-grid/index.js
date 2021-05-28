@@ -14,24 +14,32 @@ export default function ImageGrid (props) {
         <Masonry gutter="8px">
           {
             searchResults?.results
-              ? searchResults?.results.map(p => <div className={ styles.imageContainer } key={ `result-image-${p.id}` }>
-                {/* <Blurhash
-                  hash={ p.blur_hash }
-                  width="100%"
-                  height="100%"
-                /> */}
-                <img className={ styles.highres } src={ p.urls.small } />
-                <div className={ styles.overlay }>
-                  <p>{ p.user.name }</p>
-                </div>
-              </div>)
-              : <pre className="dump">{ JSON.stringify(searchResults, null, 2)}</pre>
+              ? searchResults?.results.map(p => <div
+                    className={ styles.imageContainer }
+                    key={ `result-image-${p.id}-${Math.random()}` }
+                    style={{
+                      backgroundColor: p.color
+                    }}
+                  >
+                    {/* <Blurhash
+                      hash={ p.blur_hash }
+                      width="100%"
+                      height="100%"
+                    /> */}
+                    <img
+                      className={ styles.highres }
+                      src={ p.urls.small }
+                    />
+                    <div className={ styles.overlay }>
+                      <p>{ p.user.name }</p>
+                    </div>
+                  </div>
+                )
+              : <p>No images were found</p>
+                // : <pre className="dump">{ JSON.stringify(searchResults, null, 2)}</pre>
           }
         </Masonry>
       </ResponsiveMasonry>
-
     </section>
-
-    {/* </section> */}
   </>
 }

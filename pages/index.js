@@ -1,15 +1,12 @@
-import { useState, useRef } from 'react'
-
 import Head from 'next/head'
-// import Image from 'next/image'
-
-import styles from '../styles/Home.module.css'
 
 import Search from '../components/search'
 import ImageGrid from '../components/image-grid'
 
+import styles from '../styles/Home.module.css'
+
+
 export default function Home (props) {
-  
   return (
     <div className={styles.container}>
       <Head>
@@ -19,16 +16,8 @@ export default function Home (props) {
       </Head>
 
       <main className={styles.main}>
-
-        {/* search */}
-        <Search props={ props } />
-
-
-        {/* image gallery */}
-        {
-          props.searchResults && <ImageGrid searchResults={ props.searchResults } />
-        }
-        
+        <Search searchDetails={ props } />
+        { props.searchResults && <ImageGrid searchResults={ props.searchResults } /> }
       </main>
 
       <footer className={styles.footer}>
@@ -49,8 +38,6 @@ export async function getServerSideProps (context) {
   // Will appear in the Node console
   const UNSPLASH_KEY = process.env.UNSPLASH_KEY
   let searchResults = null
-
-  console.log('context', context.query)
 
   if (context?.query?.search) {
     // a search has been submitted

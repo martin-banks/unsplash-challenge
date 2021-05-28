@@ -1,10 +1,11 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 
 import styles from './styles.module.css'
 
 export default function Search (props) {
-  const [ perPage, setPerPage ] = useState(props.per_page || 10)
-  const [ search, setSearch ] = useState(props.search || '')
+  const { searchDetails } = props
+  const [ perPage, setPerPage ] = useState(searchDetails.per_page || 10)
+  const [ search, setSearch ] = useState(searchDetails.search || '')
 
   const refForm = useRef(null)
 
@@ -19,9 +20,19 @@ export default function Search (props) {
     refForm.current.submit()
   }
 
-  return <>
-    <form className={ styles.searchForm } ref={ refForm } onSubmit={ handleSubmit }>
+  useEffect(() => {
+    if (searchDetails) {
+      setPerPage(searchDetails?.per_page)
+      setSearch(searchDetails?.search)
+    }
+  }, [searchDetails])
 
+  return <>
+    <form
+      className={ styles.searchForm }
+      ref={ refForm }
+      onSubmit={ handleSubmit }
+    >
       <label
         className={ styles.searchLabel }
         id="search"
@@ -35,7 +46,7 @@ export default function Search (props) {
         name="search"
         type="text"
         value={ search }
-        autofocus
+        autoFocus
       />
 
       <div className={ styles.perPageContainer }>
@@ -52,8 +63,11 @@ export default function Search (props) {
 
       </div>
 
-
-      <input className={ styles.searchSubmit } type="submit" value="go" />
+      <input
+        className={ styles.searchSubmit }
+        type="submit"
+        value="go"
+      />
     </form>
   </>
 }
