@@ -25,7 +25,7 @@ export default function ImageGrid (props) {
                   <p>{ p.user.name }</p>
                 </div>
               </div>)
-              : <p>No images were found</p>
+              : <pre className="dump">{ JSON.stringify(searchResults, null, 2)}</pre>
           }
         </Masonry>
       </ResponsiveMasonry>
