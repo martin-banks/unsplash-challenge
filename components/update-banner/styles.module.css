@@ -1,0 +1,12 @@
+.banner {
+  position: relative;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.25rem;
+  background: black;
+  color: white;
+  text-align: center;
+  z-index: 999;
+}

@@ -2,6 +2,7 @@ import Head from 'next/head'
 
 import Search from '../components/search'
 import ImageGrid from '../components/image-grid'
+import UpdateBanner from '../components/update-banner'
 
 import styles from '../styles/Home.module.css'
 
@@ -16,6 +17,7 @@ export default function Home (props) {
       </Head>
 
       <main className={styles.main}>
+        <UpdateBanner />
         <Search searchDetails={ props } />
         { props.searchResults && <ImageGrid searchResults={ props.searchResults } /> }
       </main>
