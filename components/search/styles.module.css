@@ -50,6 +50,7 @@
   background: none;
   /* border: solid 2px rgb(90, 231, 250, 0.6); */
   /* background: linear-gradient(135deg, rgba(0,0,0, 1), rgba(0,0,0, 0.2)) */
+  outline: none;
   border-radius: 100px;
   box-shadow:
     inset 6px 4px 12px 0 rgba(0,0,0, 0.4),
