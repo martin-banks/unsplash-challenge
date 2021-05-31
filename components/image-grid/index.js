@@ -33,6 +33,7 @@ export default function ImageGrid (props) {
                       src={ p.urls.small }
                       alt={ p.alt_description }
                     />
+                    <div className={ styles.colorOverlay } />
                     <div
                       className={ styles.overlay }
                       style={{

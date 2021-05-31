@@ -59,7 +59,6 @@
   transform: translateY(100%);
   transition: all 300ms;
   padding: 2rem;
-  /* background: linear-gradient(rgba(0,0,0, 0.6), rgba(0,0,0, 0)); */
   pointer-events: none;
   z-index: 100;
 }
@@ -69,6 +68,22 @@
   color: white;
   margin: 0;
   text-shadow: 0 1px 4px rgba(0,0,0, 0.6);
+}
+
+.colorOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(0,0,0, 0.5), rgba(255,255,255, 0.25));
+  opacity: 0;
+  z-index: 10;
+  transition: opacity 200ms;
+}
+.imageContainer:hover .colorOverlay {
+  opacity: 0.5;
 }
 
 .caption {
