@@ -15,7 +15,6 @@
   text-align: center;
   text-transform: uppercase;
   font-weight: 900;
-  /* border: solid 2px rgb(90, 231, 250, 0.6); */
   border: none;
   background: -webkit-linear-gradient(cyan, midnightblue);
   -webkit-background-clip: text;
@@ -23,7 +22,6 @@
   caret-color: dodgerblue;
   border-radius: 100px;
   outline: none;
-  /* background: linear-gradient(135deg, rgba(0,0,0, 1), rgba(0,0,0, 0.2)) */
   box-shadow:
     inset 8px 6px 16px 0 rgba(0,0,0, 0.25),
     inset -4px -4px 12px 0 rgba(255, 255, 255, 0.1);
@@ -81,13 +79,10 @@
   transition: all 200ms;
   font-size: 1.5rem;
   border: none;
-  /* border: solid 4px lightblue; */
-  /* box-shadow: 0 0px 32px -8px rgb(90, 231, 250); */
   box-shadow:
     -6px -6px 8px 0 rgba(255, 255, 255, 1),
     8px 8px 12px 0 rgba(0, 0, 0, 0.1);
   background: linear-gradient(135deg, rgba(220,220,220, 1), rgba(255,255,255, 1));
-  /* background: white; */
 }
 
 @media screen and (prefers-color-scheme: dark) {
@@ -111,7 +106,7 @@
 
 @media screen and (min-width: 600px) {
   .searchForm {
-    margin: 20vh auto 20vh auto;
+    margin: 12vh auto 20vh auto;
   }
   .searchInput__text {
     margin-bottom: 3rem;
