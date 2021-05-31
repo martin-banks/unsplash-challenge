@@ -10,16 +10,32 @@
   width: 100%;
   font-size: 2.5rem;
   padding: 1rem;
-  border: solid 2px rgb(90, 231, 250, 0.6);
   margin-bottom: 1.5rem;
   border-radius: 4px;
   text-align: center;
   text-transform: uppercase;
   font-weight: 900;
+  /* border: solid 2px rgb(90, 231, 250, 0.6); */
+  border: none;
   background: -webkit-linear-gradient(cyan, midnightblue);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   caret-color: dodgerblue;
+  border-radius: 100px;
+  outline: none;
+  /* background: linear-gradient(135deg, rgba(0,0,0, 1), rgba(0,0,0, 0.2)) */
+  box-shadow:
+    inset 8px 6px 16px 0 rgba(0,0,0, 0.25),
+    inset -4px -4px 12px 0 rgba(255, 255, 255, 0.1);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .searchInput__text {
+    box-shadow:
+      inset 8px 8px 12px 0 rgba(0,0,0, 0.25),
+      inset -4px -4px 12px 0 rgba(255, 255, 255, 0.1);
+
+  }
 }
 
 .searchInput__number {
@@ -31,7 +47,20 @@
   min-width: 200px;
   text-align: center;
   background: none;
-  border: solid 2px rgb(90, 231, 250, 0.6);
+  /* border: solid 2px rgb(90, 231, 250, 0.6); */
+  /* background: linear-gradient(135deg, rgba(0,0,0, 1), rgba(0,0,0, 0.2)) */
+  border-radius: 100px;
+  box-shadow:
+    inset 8px 6px 16px 0 rgba(0,0,0, 0.2),
+    inset -4px -4px 12px 0 rgba(255,255,255, 0.1);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .searchInput__number {
+    box-shadow:
+      inset 8px 8px 12px 0 rgba(0,0,0, 0.25),
+      inset -4px -4px 12px 0 rgba(255,255,255, 0.1);
+  }
 }
 
 .searchLabel {
@@ -47,12 +76,27 @@
   width: 100px;
   height: 100px;
   border-radius: 100px;
-  border: solid 4px lightblue;
   background: none;
   text-transform: uppercase;
   transition: all 200ms;
   font-size: 1.5rem;
-  box-shadow: 0 0px 32px -8px rgb(90, 231, 250);
+  border: none;
+  /* border: solid 4px lightblue; */
+  /* box-shadow: 0 0px 32px -8px rgb(90, 231, 250); */
+  box-shadow:
+    -6px -6px 8px 0 rgba(255, 255, 255, 1),
+    8px 8px 12px 0 rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, rgba(220,220,220, 1), rgba(255,255,255, 1));
+  /* background: white; */
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .searchSubmit {
+    box-shadow:
+      8px 8px 12px 0 rgba(0,0,0, 0.25),
+      -6px -6px 8px 0 rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(0,0,0, 1), rgba(255,255,255, 0.1))
+  }
 }
 
 .searchSubmit:hover {
