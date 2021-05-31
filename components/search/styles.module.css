@@ -23,16 +23,19 @@
   border-radius: 100px;
   outline: none;
   box-shadow:
-    inset 8px 6px 16px 0 rgba(0,0,0, 0.25),
-    inset -4px -4px 12px 0 rgba(255, 255, 255, 0.1);
+    inset 6px 4px 12px 0 rgba(0,0,0, 0.4),
+    inset -4px -4px 12px 0 rgba(255,255,255, 0.1),
+    -1px -1px 4px 0 rgba(0,0,0, 0.4),
+    1px 1px 4px 0 rgba(255,255,255, 1);
 }
 
 @media screen and (prefers-color-scheme: dark) {
   .searchInput__text {
     box-shadow:
-      inset 8px 8px 12px 0 rgba(0,0,0, 0.25),
-      inset -4px -4px 12px 0 rgba(255, 255, 255, 0.1);
-
+      inset 8px 8px 16px 0 rgba(0,0,0, 0.8),
+      inset -4px -4px 16px 0 rgba(255, 255, 255, 0.2),
+      -1px -1px 5px 0 rgba(0,0,0, 1),
+      1px 1px 2px 0 rgba(255,255,255, 0.4);
   }
 }
 
@@ -49,15 +52,19 @@
   /* background: linear-gradient(135deg, rgba(0,0,0, 1), rgba(0,0,0, 0.2)) */
   border-radius: 100px;
   box-shadow:
-    inset 8px 6px 16px 0 rgba(0,0,0, 0.2),
-    inset -4px -4px 12px 0 rgba(255,255,255, 0.1);
+    inset 6px 4px 12px 0 rgba(0,0,0, 0.4),
+    inset -4px -4px 12px 0 rgba(255,255,255, 0.1),
+    -1px -1px 4px 0 rgba(0,0,0, 0.4),
+    1px 1px 4px 0 rgba(255,255,255, 1);
 }
 
 @media screen and (prefers-color-scheme: dark) {
   .searchInput__number {
     box-shadow:
-      inset 8px 8px 12px 0 rgba(0,0,0, 0.25),
-      inset -4px -4px 12px 0 rgba(255,255,255, 0.1);
+      inset 8px 8px 12px 0 rgba(0,0,0, 0.6),
+      inset -4px -4px 16px 0 rgba(255,255,255, 0.2),
+      -1px -1px 5px 0 rgba(0,0,0, 1),
+      1px 1px 2px 0 rgba(255,255,255, 0.4);
   }
 }
 
@@ -80,22 +87,27 @@
   font-size: 1.5rem;
   border: none;
   box-shadow:
-    -6px -6px 8px 0 rgba(255, 255, 255, 1),
-    8px 8px 12px 0 rgba(0, 0, 0, 0.1);
+    -6px -6px 16px 0 rgba(255, 255, 255, 0.8),
+    8px 8px 12px 0 rgba(0, 0, 0, 0.3),
+    inset -2px -2px 4px 0 rgba(0,0,0, 0.3),
+    inset 2px 2px 4px 0 rgba(255,255,255, 1);
   background: linear-gradient(135deg, rgba(220,220,220, 1), rgba(255,255,255, 1));
 }
 
 @media screen and (prefers-color-scheme: dark) {
   .searchSubmit {
     box-shadow:
-      8px 8px 12px 0 rgba(0,0,0, 0.25),
-      -6px -6px 8px 0 rgba(255, 255, 255, 0.1);
+      8px 8px 12px 0 rgba(0,0,0, 0.4),
+      -4px -4px 8px 0 rgba(255, 255, 255, 0.1),
+      inset -2px -2px 4px 0 rgba(0,0,0, 0.6),
+      inset 2px 2px 4px 0 rgba(255,255,255, 0.3);
     background: linear-gradient(135deg, rgba(0,0,0, 1), rgba(255,255,255, 0.1))
   }
 }
 
 .searchSubmit:hover {
   background: deepskyblue;
+  background: linear-gradient(135deg, rgb(2, 139, 185), rgb(99, 216, 255));
   color: white
 }
 
